@@ -1,0 +1,1006 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dc "http://purl.org/dc/terms#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY power "http://dmir.inesc-id.pt/pub/publications/2010/power#" >
+]>
+
+
+<rdf:RDF xmlns="http://dmir.inesc-id.pt/pub/publications/2010/power#"
+     xml:base="http://dmir.inesc-id.pt/pub/publications/2010/power"
+     xmlns:dc="http://purl.org/dc/terms#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:power="http://dmir.inesc-id.pt/pub/publications/2010/power#">
+    <owl:Ontology rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#affiliatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#affiliatedTo">
+        <rdfs:label>affiliatedTo</rdfs:label>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#affiliatedTo"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAssociation"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#affiliatedTo"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAffiliation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#forMandate -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#forMandate">
+        <rdfs:label>forMandate</rdfs:label>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#forMandate"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Election"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#forMandate"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Mandate"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#hasAffiliation -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#hasAffiliation">
+        <rdfs:label>hasAffiliation</rdfs:label>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#hasAffiliation"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Politician"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#hasAffiliation"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAffiliation"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#hasNature -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#hasNature">
+        <rdfs:label>hasNature</rdfs:label>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#hasNature"/>
+                <owl:onClass rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Mandate"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#hasNature"/>
+                <owl:onClass rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#MandateAttainment"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#hasPower -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#hasPower">
+        <rdfs:label>hasPower</rdfs:label>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#hasPower"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalInstitution"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#hasPower"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalPower"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#hasScope -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#hasScope">
+        <rdfs:label>hasScope</rdfs:label>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#hasScope"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Organization"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#hasScope"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalScope"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#hasType -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#hasType">
+        <rdfs:label>hasType</rdfs:label>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#EntityName"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#NameType"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#hasWeb -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#hasWeb">
+        <rdfs:label>hasWeb</rdfs:label>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#hasWeb"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#WebPage"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#hasWeb"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalEntity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#isCandidate -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#isCandidate">
+        <rdfs:label>isCandidate</rdfs:label>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#isCandidate"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#RunnersList"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#isCandidate"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Politician"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#isComposedBy -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#isComposedBy">
+        <rdfs:label>isComposedBy</rdfs:label>
+        <owl:inverseOf rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#isPartOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#isComposedBy"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAssociation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#isComposedBy"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAssociation"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#isHeadCandidate -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#isHeadCandidate">
+        <rdfs:label>isHeadCandidate</rdfs:label>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#isHeadCandidate"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Politician"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#isHeadCandidate"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#RunnersList"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#isPartOf">
+        <rdfs:label>isPartOf</rdfs:label>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#isPartOf"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAssociation"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#isPartOf"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAssociation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#isReferredBy -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#isReferredBy">
+        <rdfs:label>isReferredBy</rdfs:label>
+        <owl:inverseOf rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#refers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#mandateIn -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#mandateIn">
+        <rdfs:label>mandateIn</rdfs:label>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#mandateIn"/>
+                <owl:onClass rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Organization"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#mandateIn"/>
+                <owl:onClass rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Mandate"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#refers -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#refers">
+        <rdfs:label>refers</rdfs:label>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#refers"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#EntityName"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#refers"/>
+                <owl:onClass rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalEntity"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#runsIn -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#runsIn">
+        <rdfs:label>runsIn</rdfs:label>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#runsIn"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Election"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#runsIn"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#RunnersList"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#servesMandate -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#servesMandate">
+        <rdfs:label>servesMandate</rdfs:label>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#servesMandate"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Mandate"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#servesMandate"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Politician"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#withEndorsementOf -->
+
+    <owl:ObjectProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#withEndorsementOf">
+        <rdfs:label>withEndorsementOf</rdfs:label>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#withEndorsementOf"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAssociation"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#withEndorsementOf"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#RunnersList"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#area -->
+
+    <owl:DatatypeProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#area">
+        <rdfs:label>area</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Mandate"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#category -->
+
+    <owl:DatatypeProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#category">
+        <rdfs:label>category</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#WebPage"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#foundedIn -->
+
+    <owl:DatatypeProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#foundedIn">
+        <rdfs:label>foundedIn</rdfs:label>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAssociation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#from -->
+
+    <owl:DatatypeProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#from">
+        <rdfs:label>from</rdfs:label>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Mandate"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAffiliation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Organization"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#geoNetID -->
+
+    <owl:DatatypeProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#geoNetID">
+        <rdfs:label>geoNetID</rdfs:label>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Organization"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#id -->
+
+    <owl:DatatypeProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#id">
+        <rdfs:label>id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#imageURL -->
+
+    <owl:DatatypeProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#imageURL">
+        <rdfs:label>imageURL</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Politician"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#name -->
+
+    <owl:DatatypeProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#name">
+        <rdfs:label>name</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#EntityName"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#office -->
+
+    <owl:DatatypeProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#office">
+        <rdfs:label>office</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Mandate"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#politicalWing -->
+
+    <owl:DatatypeProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#politicalWing">
+        <rdfs:label>politicalWing</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAssociation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#term -->
+
+    <owl:DatatypeProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#term">
+        <rdfs:label>term</rdfs:label>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Organization"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#to -->
+
+    <owl:DatatypeProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#to">
+        <rdfs:label>to</rdfs:label>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Mandate"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAffiliation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Organization"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#url -->
+
+    <owl:DatatypeProperty rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#url">
+        <rdfs:label>url</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#WebPage"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Election -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Election">
+        <rdfs:label>Election</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#ElectionType -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#ElectionType">
+        <rdfs:label>ElectionType</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Internal"/>
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Presidentials"/>
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Regionals"/>
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Legislatives"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#EntityName -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#EntityName">
+        <rdfs:label>EntityName</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Mandate -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Mandate">
+        <rdfs:label>Mandate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#MandateAttainment -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#MandateAttainment">
+        <rdfs:label>MandateAttainment</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Election"/>
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Appointment"/>
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Inherency"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#NameType -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#NameType">
+        <rdfs:label>NameType</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#MediaName"/>
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Acronym"/>
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Nickname"/>
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#BirthName"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Organization -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Organization">
+        <rdfs:label>Organization</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalEntity"/>
+        <owl:disjointWith rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Politician"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAffiliation -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAffiliation">
+        <rdfs:label>PoliticalAffiliation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAssociation -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalAssociation">
+        <rdfs:label>PoliticalAssociation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Organization"/>
+        <owl:disjointWith rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalEntity -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalEntity">
+        <rdfs:label>PoliticalEntity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalInstitution -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalInstitution">
+        <rdfs:label>PoliticalInstitution</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalPower -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalPower">
+        <rdfs:label>PoliticalPower</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Executive"/>
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Legislative"/>
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Moderator"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalScope -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalScope">
+        <rdfs:label>PoliticalScope</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#European"/>
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Regional"/>
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#International"/>
+                    <rdf:Description rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#National"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Politician -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Politician">
+        <rdfs:label>Politician</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#RunnersList -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#RunnersList"/>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#WebPage -->
+
+    <owl:Class rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#WebPage">
+        <rdfs:label>WebPage</rdfs:label>
+    </owl:Class>
+
+
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Acronym -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Acronym">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#NameType"/>
+        <rdfs:label>Acronym</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Appointment -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Appointment">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#MandateAttainment"/>
+        <rdfs:label>Appointment</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#BirthName -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#BirthName">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#NameType"/>
+        <rdfs:label>BirthName</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Election -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Election">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#MandateAttainment"/>
+        <rdfs:label>Election</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#European -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#European">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalScope"/>
+        <rdfs:label>European</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Executive -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Executive">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalPower"/>
+        <rdfs:label>Executive</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Inherency -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Inherency">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#MandateAttainment"/>
+        <rdfs:label>Inherency</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Internal -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Internal">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#ElectionType"/>
+        <rdfs:label>Internal</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#International -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#International">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalScope"/>
+        <rdfs:label>International</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Legislative -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Legislative">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalPower"/>
+        <rdfs:label>Legislative</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Legislatives -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Legislatives">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#ElectionType"/>
+        <rdfs:label>Legislatives</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#MediaName -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#MediaName">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#NameType"/>
+        <rdfs:label>MediaName</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Moderator -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Moderator">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalPower"/>
+        <rdfs:label>Moderator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#National -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#National">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalScope"/>
+        <rdfs:label>National</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Nickname -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Nickname">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#NameType"/>
+        <rdfs:label>Nickname</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Presidentials -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Presidentials">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#ElectionType"/>
+        <rdfs:label>Presidentials</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Regional -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Regional">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#PoliticalScope"/>
+        <rdfs:label>Regional</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dmir.inesc-id.pt/pub/publications/2010/power#Regionals -->
+
+    <owl:NamedIndividual rdf:about="http://dmir.inesc-id.pt/pub/publications/2010/power#Regionals">
+        <rdf:type rdf:resource="http://dmir.inesc-id.pt/pub/publications/2010/power#ElectionType"/>
+        <rdfs:label>Regionals</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
